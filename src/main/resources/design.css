@@ -1,0 +1,130 @@
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+body{
+    font-family: "Comic Sans MS", serif;
+    background-color: #160F29;
+    color: #fff4fc;
+}
+.headBar{
+    height: 80px;
+    display: block;
+    background-color: #33032f;
+}
+.headContainer {
+    height: 50px;
+    position: fixed;
+    top: 15px;
+    bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+}
+#logoSection{
+    height: 50px;
+    display: flex;
+}
+h1{
+    font-size: 40px;
+}
+.logoLink{
+    text-decoration: none;
+    color: #ffffff;
+    margin-right: 3px;
+}
+#login{
+
+}
+#loginForm{
+    position: relative;
+    top: 12px;
+}
+input{
+    height: 26px;
+    border-radius: 5px;
+    background-color: #403F4C;
+    border: none;
+}
+.button{
+    color: white;
+}
+.canvas{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+.moonLanding{
+    position: absolute;
+    top: 10%;
+    left: 10%;
+    height: 50%;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+#moon{
+    position: absolute;
+    top: 7%;
+    height: 86%;
+    z-index: -1;
+}
+#eagle{
+    position: absolute;
+    top: 37.5%;
+    height: 25%;
+    animation: eagleOrbit 20s linear infinite;
+}
+@keyframes eagleOrbit {
+    from { 	transform: rotate(0deg) translateX(220%); }
+    to   {  transform: rotate(360deg) translateX(220%); }
+}
+#intro{
+    position: absolute;
+    width: 40%;
+    top: 65%;
+    left: 15%;
+}
+#earthAndStation{
+    position: absolute;
+    top: 60%;
+    height: 15%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+}
+#earth{
+    position: absolute;
+    height: 100%;
+    z-index: -1;
+}
+#iss{
+    position: absolute;
+    top: 35%;
+    height: 30%;
+    animation: issOrbit 16s linear reverse infinite;
+    z-index: -1;
+}
+#hubble{
+    position: absolute;
+    top: 35%;
+    height: 30%;
+    animation: hubbleOrbit 13s linear infinite;
+    z-index: -1;
+}
+@keyframes issOrbit {
+    from { 	transform: rotate(0deg) translateY(-220%); }
+    to   {  transform: rotate(360deg) translateY(-220%); }
+}
+@keyframes hubbleOrbit {
+    from { 	transform: rotate(0deg) translateY(330%); }
+    to   {  transform: rotate(360deg) translateY(330%); }
+}
