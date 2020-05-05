@@ -54,6 +54,7 @@ h1{
 }
 #login{
     height: 50px;
+    width: 40%;
 }
 #loginForm{
     position: relative;
@@ -71,11 +72,39 @@ input{
 }
 
 /*Main content on the page*/
-.canvas{
+#canvas{
     position: absolute;
     height: 100%;
     width: 100%;
 }
+#mainContent{
+    position: absolute;
+    width: 80%; left: 10%; right: 10%;
+    height: 85%;
+    background-color: aqua;
+    top: 80px;
+    display: flex;
+    flex-flow: wrap;    /*adds a breakpoint if necessary*/
+}
+#moonLanding{
+    position: relative;
+    height: 100%;
+    width: 60%;
+    background-color: aliceblue;
+}
+#registration{
+    position: relative;
+    height: 100%;
+    width: 40%;
+    background-color: yellow;
+}
+
+
+
+
+
+
+
 .moonLanding{
     position: absolute;
     top: 12%;
