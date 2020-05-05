@@ -19,7 +19,7 @@ body{
     width: 100%;
 }
 
-/*The headBar of the page*/
+/*_________________The headBar of the page_________________*/
 header{
     position: absolute;
     height: 80px;
@@ -34,45 +34,64 @@ header{
     display: flex;
     justify-content: space-between;
     width: 80%;
-    text-align: center;
 }
 #logoSection{
     height: 50px;
     display: flex;
+    width: 60%;
 }
 #logoLink{
     z-index: 9;
-    margin-right: 3px;
 }
 #nameLink{
     text-decoration: none;
     color: #ffffff;
 }
 h1{
+    margin-left: 2%;
     font-size: 40px;
     z-index: 9;
 }
 #login{
     height: 50px;
     width: 40%;
+    display: flex;
+    justify-content: center;
 }
 #loginForm{
-    position: relative;
-    top: 12px;
     z-index: 9;
     width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 input{
     height: 26px;
     border-radius: 5px;
     background-color: #403F4C;
+    width: 38%;
     border: none;
 }
 .button{
     color: white;
+    width: 18%;
 }
+@media only screen and (max-width: 700px) {
+    h1{
+        display: none;
+    }
+    #logoSection{
+        width: 50px;
+        margin-right: 2.5%;
+    }
+    #login{
+        width: 100%;
+    }
+}
+/*Headbar is fully reactive and finished!*/
 
-/*Main content on the page*/
+
+/*_________________Main content on the page_________________*/
 #canvas{
     position: absolute;
     height: 100%;
@@ -86,12 +105,47 @@ input{
     display: flex;
     flex-flow: wrap;    /*adds a breakpoint if necessary*/
 }
-#moonLanding{
+#introBadge{
     position: relative;
     height: 100%;
     width: 60%;
-    background-color: aliceblue;
-}
+    display: block;
+    justify-content: center;
+    }
+    .moonLanding{
+        position: relative;
+        height: 75%;
+        width: 100%;
+        display: flex;
+        min-height: 200px;
+    }
+        #moon{
+            position: relative;
+            top: 15%; bottom: 15%;
+            height: 70%; width: 42%;
+            right: 29%; left: 29%;
+            z-index: -1;
+        }
+        #eagle{
+            position: relative;
+            height: 13%; width: 7.8%;
+            top: 43.5%; bottom: 43.5%;
+            left: 4.1%; right: -4.1%;
+            animation: eagleOrbit 20s linear infinite;
+        }
+    #intro{
+        height: 25%;
+        width: 80%;
+        left: 10%; right: 10%;
+        display: flex;
+    }
+    p{
+        text-align: justify;
+    }
+
+
+
+
 #registration{
     position: relative;
     height: 100%;
@@ -102,9 +156,9 @@ input{
 
 @media only screen and (max-width: 700px) {
     #mainContent {
-        display: table;
+        display: block;
     }
-    #moonLanding{
+    #introBadge{
         height: 50%;
         width: 100%;
     }
@@ -112,44 +166,21 @@ input{
         height: 50%;
         width: 100%;
     }
+    #eagle{
+        animation: eagleOrbitMobile 20s linear infinite;
+    }
 }
 
-
-
-
-
-
-
-.moonLanding{
-    position: absolute;
-    top: 12%;
-    left: 10%;
-    height: 50%;
-    width: 50%;
-    display: flex;
-    justify-content: center;
-}
-#moon{
-    position: absolute;
-    height: 100%;
-    z-index: -1;
-}
-#eagle{
-    position: absolute;
-    top: 40%;
-    height: 20%;
-    animation: eagleOrbit 20s linear infinite;
-}
 @keyframes eagleOrbit {
-    from { 	transform: rotate(0deg) translateX(310%); }
-    to   {  transform: rotate(360deg) translateX(310%); }
+    from { 	transform: rotate(0deg) translateX(330%); }
+    to   {  transform: rotate(360deg) translateX(330%); }
 }
-#intro{
-    position: absolute;
-    width: 40%;
-    top: 65%;
-    left: 15%;
+@keyframes eagleOrbitMobile {
+    from { 	transform: rotate(0deg) translateY(330%); }
+    to   {  transform: rotate(360deg) translateY(330%); }
 }
+
+
 #earthAndStation{
     position: absolute;
     top: 60%;
