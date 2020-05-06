@@ -96,52 +96,42 @@ input{
     position: absolute;
     height: 100%;
     width: 100%;
+    display: flex;
+    justify-content: center;
 }
 #mainContent{
-    position: absolute;
-    width: 80%; left: 10%; right: 10%;
+    position: relative;
+    width: 80%;
     height: 85%;
     top: 80px;
     display: flex;
     flex-flow: wrap;    /*adds a breakpoint if necessary*/
 }
-#introBadge{
-    position: relative;
-    height: 100%;
-    width: 60%;
-    display: block;
-    justify-content: center;
-    }
     .moonLanding{
         position: relative;
-        height: 75%;
-        width: 100%;
-        display: flex;
-        min-height: 200px;
+        height: 100%;
+        width: 60%;
     }
         #moon{
             position: relative;
-            top: 15%; bottom: 15%;
-            height: 70%; width: 42%;
-            right: 29%; left: 29%;
-            z-index: -1;
+            display: block;
+            margin: 60px auto;
+            width: 320px; min-width: 320px;
+            height: 320px; min-height: 320px;
         }
         #eagle{
-            position: relative;
-            height: 13%; width: 7.8%;
-            top: 43.5%; bottom: 43.5%;
-            left: 4.1%; right: -4.1%;
+            position: relative; top: -245px;
+            display: block; margin: 0 auto;
+            height: 50px; min-height: 50px;
+            width: 50px; max-height: 50px;
             animation: eagleOrbit 20s linear infinite;
         }
-    #intro{
-        height: 25%;
-        width: 80%;
-        left: 10%; right: 10%;
-        display: flex;
-    }
-    p{
-        text-align: justify;
-    }
+        #intro{
+            text-align: justify;
+            position: relative;
+            top: -50px;
+            margin: 0% 5% 0% 5%;
+        }
 
 
 
@@ -157,13 +147,14 @@ input{
 @media only screen and (max-width: 700px) {
     #mainContent {
         display: block;
+        margin: auto;
     }
     #introBadge{
-        height: 50%;
+        min-height: 50%;
         width: 100%;
     }
     #registration{
-        height: 50%;
+        min-height: 50%;
         width: 100%;
     }
     #eagle{
@@ -172,8 +163,8 @@ input{
 }
 
 @keyframes eagleOrbit {
-    from { 	transform: rotate(0deg) translateX(330%); }
-    to   {  transform: rotate(360deg) translateX(330%); }
+    from { 	transform: rotate(0deg) translateX(190px); }
+    to   {  transform: rotate(360deg) translateX(190px); }
 }
 @keyframes eagleOrbitMobile {
     from { 	transform: rotate(0deg) translateY(330%); }
