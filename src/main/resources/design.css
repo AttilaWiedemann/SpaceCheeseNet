@@ -12,7 +12,7 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
 }
 body{
     font-family: "Comic Sans MS", serif;
-    background-color: #0d0a29;
+    background-color: #0e0b21;
     color: #fff4fc;
     position: absolute;
     height: 100%;
@@ -136,16 +136,12 @@ input{
             top: -50px;
             margin: 0% 5% 0% 5%;
         }
-
-
-
-
 #registration{
     position: relative;
     height: 100%;
     width: 40%;
-    background-color: yellow;
 }
+
 /*________________Design elements_________________*/
 #earthAndStation{
     position: absolute;
@@ -169,8 +165,8 @@ input{
     position: relative;
     display: block;
     margin: 0 auto;
-    height: 20px;
-    top: -50px;
+    height: 24px;
+    top: -52px;
     animation: issOrbit 16s linear reverse infinite;
     z-index: -9;
 }
@@ -178,11 +174,52 @@ input{
     position: relative;
     display: block;
     margin: auto;
-    height: 20px;
-    top: -70px;
+    height: 24px;
+    top: -76px;
     animation: hubbleOrbit 13s linear infinite;
     z-index: -8;
 }
+
+#marsAndRover{
+    position: absolute;
+    top: 45%;
+    right: 1250px;
+    height: 60px;
+    width: 60px;
+}
+#mars{
+    display: block;
+    height: 60px;
+    z-index: -10;
+}
+#curiosity{
+    position: relative; margin: auto;
+    display: block;
+    height: 24px;
+    top: -42px;
+    animation: roverOrbit 60s linear reverse infinite;
+    z-index: -9;
+}
+@keyframes roverOrbit {
+    from { 	transform: rotate(0deg) translateY(39px) scaleY(-1); }
+    to   {  transform: rotate(360deg) translateY(39px) scaleY(-1); }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 @media only screen and (max-width: 700px) {
     #mainContent {
@@ -214,34 +251,10 @@ input{
 
 
 @keyframes issOrbit {
-    from { 	transform: rotate(0deg) translateY(-250%); }
-    to   {  transform: rotate(360deg) translateY(-250%); }
+    from { 	transform: rotate(0deg) translateY(-55px); }
+    to   {  transform: rotate(360deg) translateY(-55px); }
 }
 @keyframes hubbleOrbit {
-    from { 	transform: rotate(0deg) translateY(360%); }
-    to   {  transform: rotate(360deg) translateY(360%); }
-}
-#marsAndRover{
-    position: absolute;
-    top: 30%;
-    left: -4%;
-    height: 12%;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-    min-width: 15%;
-}
-#mars{
-    position: absolute;
-    height: 100%;
-}
-#curiosity{
-    position: absolute;
-    height: 30%;
-    top: 35%;
-    animation: roverOrbit 60s linear reverse infinite;
-}
-@keyframes roverOrbit {
-    from { 	transform: rotate(0deg) translateY(200%) scaleY(-1); }
-    to   {  transform: rotate(360deg) translateY(200%) scaleY(-1); }
+    from { 	transform: rotate(0deg) translateY(84px); }
+    to   {  transform: rotate(360deg) translateY(84px); }
 }
