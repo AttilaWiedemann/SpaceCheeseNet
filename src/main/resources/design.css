@@ -11,8 +11,8 @@ html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockq
     background: transparent;
 }
 body{
-    font-family: "Comic Sans MS", serif;
-    background-color: #0e0b21;
+    font-family: "Trebuchet MS", "Comic Sans MS", serif;
+    background-color: #09051e;
     color: #fff4fc;
     position: absolute;
     height: 100%;
@@ -24,7 +24,7 @@ header{
     position: absolute;
     height: 80px;
     width: 100%;
-    background-color: #280324;
+    background-color: #16031e;
     display: flex;
     justify-content: center;
     align-items: center;
