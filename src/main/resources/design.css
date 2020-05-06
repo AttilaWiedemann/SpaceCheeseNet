@@ -154,12 +154,11 @@ input{
     height: 80px;
     width: 80px;
     animation: earthHover 8s infinite;
-    z-index: -2;
 }
 #earth{
     display: block;
-    height: 100%;
-    z-index: -1;
+    height: 80px;
+    z-index: -10;
 }
 @keyframes earthHover {
     0% {top: 65%}
@@ -167,18 +166,22 @@ input{
     100% {top: 65%}
 }
 #iss{
+    position: relative;
     display: block;
     margin: 0 auto;
-    height: 30%;
-    /*animation: issOrbit 16s linear reverse infinite;*/
-    z-index: -1;
+    height: 20px;
+    top: -50px;
+    animation: issOrbit 16s linear reverse infinite;
+    z-index: -9;
 }
 #hubble{
+    position: relative;
     display: block;
     margin: auto;
-    height: 30%;
-    /*animation: hubbleOrbit 13s linear infinite;*/
-    z-index: -1;
+    height: 20px;
+    top: -70px;
+    animation: hubbleOrbit 13s linear infinite;
+    z-index: -8;
 }
 
 @media only screen and (max-width: 700px) {
