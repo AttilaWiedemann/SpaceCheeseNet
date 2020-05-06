@@ -98,6 +98,7 @@ input{
     width: 100%;
     display: flex;
     justify-content: center;
+    min-height: 625px;
 }
 #mainContent{
     position: relative;
@@ -106,6 +107,7 @@ input{
     top: 80px;
     display: flex;
     flex-flow: wrap;    /*adds a breakpoint if necessary*/
+    min-height: 530px;
 }
     .moonLanding{
         position: relative;
@@ -118,6 +120,7 @@ input{
             margin: 60px auto;
             width: 320px; min-width: 320px;
             height: 320px; min-height: 320px;
+            z-index: -1;
         }
         #eagle{
             position: relative; top: -245px;
@@ -125,6 +128,7 @@ input{
             height: 50px; min-height: 50px;
             width: 50px; max-height: 50px;
             animation: eagleOrbit 20s linear infinite;
+            z-index: -1;
         }
         #intro{
             text-align: justify;
@@ -142,7 +146,40 @@ input{
     width: 40%;
     background-color: yellow;
 }
-
+/*________________Design elements_________________*/
+#earthAndStation{
+    position: absolute;
+    top: 68%;
+    right: 1175px;
+    height: 80px;
+    width: 80px;
+    animation: earthHover 8s infinite;
+    z-index: -2;
+}
+#earth{
+    display: block;
+    height: 100%;
+    z-index: -1;
+}
+@keyframes earthHover {
+    0% {top: 65%}
+    50% {top: 70%}
+    100% {top: 65%}
+}
+#iss{
+    display: block;
+    margin: 0 auto;
+    height: 30%;
+    /*animation: issOrbit 16s linear reverse infinite;*/
+    z-index: -1;
+}
+#hubble{
+    display: block;
+    margin: auto;
+    height: 30%;
+    /*animation: hubbleOrbit 13s linear infinite;*/
+    z-index: -1;
+}
 
 @media only screen and (max-width: 700px) {
     #mainContent {
@@ -172,33 +209,7 @@ input{
 }
 
 
-#earthAndStation{
-    position: absolute;
-    top: 60%;
-    height: 15%;
-    width: 20%;
-    display: flex;
-    justify-content: center;
-}
-#earth{
-    position: absolute;
-    height: 100%;
-    z-index: -1;
-}
-#iss{
-    position: absolute;
-    top: 35%;
-    height: 30%;
-    animation: issOrbit 16s linear reverse infinite;
-    z-index: -1;
-}
-#hubble{
-    position: absolute;
-    top: 35%;
-    height: 30%;
-    animation: hubbleOrbit 13s linear infinite;
-    z-index: -1;
-}
+
 @keyframes issOrbit {
     from { 	transform: rotate(0deg) translateY(-250%); }
     to   {  transform: rotate(360deg) translateY(-250%); }
