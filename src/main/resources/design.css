@@ -108,6 +108,7 @@ textarea:focus, input:focus{
     display: flex;
     justify-content: center;
     min-height: 625px;
+    overflow: hidden;
 }
 #mainContent{
     position: relative;
@@ -117,7 +118,6 @@ textarea:focus, input:focus{
     display: flex;
     flex-flow: wrap;    /*adds a breakpoint if necessary*/
     min-height: 530px;
-    overflow: hidden;
 }
     #introduction{
         position: relative;
@@ -129,7 +129,6 @@ textarea:focus, input:focus{
         #canvas{
             position: relative;
             height: 80%;
-            background-color: chartreuse;
         }
         /*__________________Moon and Eagle__________________*/
             #moonLanding{
@@ -175,17 +174,78 @@ textarea:focus, input:focus{
                 width: 4%;
                 height: 100%;
                 z-index: 30;
-                animation:  issOrbit 12s linear infinite, earthHover 10s infinite;
+                animation:  issOrbit 16s linear infinite reverse, earthHover 10s infinite;
             }
             @keyframes issOrbit {
                 from { 	transform: rotate(0deg) translateX(-200%); }
                 to   {  transform: rotate(360deg) translateX(-200%); }
             }
-
+        /*__________________Mars and rover__________________*/
+            #mars{
+                position: absolute;
+                top: 4%;
+                left: 3%;
+                width: 9%;
+                height: 100%;
+                z-index: 1;
+            }
+            #curiosity{
+                position: absolute;
+                top: 4%;
+                left: 6%;
+                width: 3%;
+                height: 100%;
+                z-index: 1;
+                animation: satelliteOrbit 50s infinite linear;
+            }
+            @keyframes satelliteOrbit {
+                from { 	transform: rotate(0deg) translateX(-180%); scaleX(-1)}
+                to   {  transform: rotate(360deg) translateX(-180%); scaleX(-1)}
+            }
+            #exoMars{
+                position: absolute;
+                top: 4%;
+                left: 5.5%;
+                width: 4%;
+                height: 100%;
+                z-index: 1;
+                animation: exoMarsOrbit 18s infinite linear;
+            }
+            @keyframes exoMarsOrbit {
+                from { 	transform: rotate(0deg) translateX(200%); }
+                to   {  transform: rotate(360deg) translateX(200%); }
+            }
+        /*__________________Jupiter with moons__________________*/
+            #jupiter{
+                position: absolute;
+                top: -30%;
+                left: 9%;
+                width: 12%;
+                height: 100%;
+                z-index: 1;
+                animation: jupiterHover 5s infinite;
+            }
+            @keyframes jupiterHover {
+                0% {top: -31%}
+                50% {top: -29%}
+                100% {top: -31%}
+            }
+            #voyager{
+                position: absolute;
+                top: -30%;
+                left: 13%;
+                width: 4%;
+                height: 100%;
+                z-index: 1;
+                animation: voyagerOrbit 18s infinite linear reverse, jupiterHover 5s infinite;
+            }
+            @keyframes voyagerOrbit {
+                from { 	transform: rotate(0deg) translateX(220%); }
+                to   {  transform: rotate(360deg) translateX(220%); }
+            }
 #intro{
     position: relative;
     height: 20%;
-    background-color: yellow;
     text-align: justify;
     display: flex;
     flex-direction: column;
@@ -238,57 +298,6 @@ textarea:focus, input:focus{
             #regButton{
                 display: block; height: 100%; width: 40%; margin: 0 auto;
             }
-
-
-
-#marsAndRover{
-    position: absolute;
-    top: 45%;
-    right: 1250px;
-    height: 60px;
-    width: 60px;
-}
-#mars{
-    display: block;
-    height: 60px;
-    z-index: -10;
-}
-#curiosity{
-    position: relative; margin: auto;
-    display: block;
-    height: 24px;
-    top: -42px;
-    animation: roverOrbit 60s linear reverse infinite;
-    z-index: -9;
-}
-@keyframes roverOrbit {
-    from { 	transform: rotate(0deg) translateY(39px) scaleY(-1); }
-    to   {  transform: rotate(360deg) translateY(39px) scaleY(-1); }
-}
-#jupiter{
-    position: absolute;
-    height: 95px; width: 95px;
-    right: 1150px;
-    animation: jupiterHover 12s infinite;
-    z-index: -20;
-}
-@keyframes jupiterHover {
-    0% {top: 18%}
-    50% {top: 22%}
-    100% {top: 18%}
-}
-#voyager{
-    position: absolute;
-    height: 25px; width: 25px;
-    top: 25%;
-    overflow: hidden;
-    animation: voyagerFlight 30s linear  infinite;
-    z-index: -10;
-}
-@keyframes voyagerFlight {
-    from { 	transform: translateX(-1900px); }
-    to   {  transform: translateX(1900px); }
-}
 #saturn{
     position: absolute;
     width: 110px;
