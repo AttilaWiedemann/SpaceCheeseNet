@@ -1,7 +1,7 @@
 /*THIS IS THE CSS TO SPACECHEESENET'S HOMEPAGE*/
 
 /*Some basic settings to overwrite any browser given margins, gaps, ect...*/
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
+html, body, div, span, applet, input, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, caption {
     margin: 0;
     padding: 0;
     border: 0;
@@ -17,6 +17,9 @@ body{
     position: absolute;
     height: 100%;
     width: 100%;
+    overflow-x: hidden;
+    padding: 0;
+
 }
 
 /*_________________The headBar of the page_________________*/
@@ -33,7 +36,7 @@ header{
     height: 50px;
     display: flex;
     justify-content: space-between;
-    width: 80%;
+    width: 85%;
 }
 #logoSection{
     height: 50px;
@@ -47,8 +50,10 @@ header{
     text-decoration: none;
     color: #ffffff;
 }
+#pageTitle{
+    margin-left: 5px;
+}
 h1{
-    margin-left: 2%;
     font-size: 40px;
     z-index: 9;
 }
@@ -72,6 +77,10 @@ input{
     width: 38%;
     border: none;
 }
+textarea:focus, input:focus{
+    outline: none;
+    border:1px solid #034748;
+}
 .button{
     color: white;
     width: 18%;
@@ -92,7 +101,7 @@ input{
 
 
 /*_________________Main content on the page_________________*/
-#canvas{
+#mainContainer{
     position: absolute;
     height: 100%;
     width: 100%;
@@ -102,83 +111,135 @@ input{
 }
 #mainContent{
     position: relative;
-    width: 80%;
-    height: 85%;
+    width: 85%;
+    height: 87.2%;
     top: 80px;
     display: flex;
     flex-flow: wrap;    /*adds a breakpoint if necessary*/
     min-height: 530px;
+    overflow: hidden;
 }
-    .moonLanding{
+    #introduction{
         position: relative;
         height: 100%;
-        width: 60%;
+        width: 65%;
     }
-        #moon{
+
+/*_________________________Design elements_________________________*/
+        #canvas{
             position: relative;
-            display: block;
-            margin: 60px auto;
-            width: 320px; min-width: 320px;
-            height: 320px; min-height: 320px;
-            z-index: -1;
+            height: 80%;
+            background-color: chartreuse;
         }
-        #eagle{
-            position: relative; top: -245px;
-            display: block; margin: 0 auto;
-            height: 50px; min-height: 50px;
-            width: 50px; max-height: 50px;
-            animation: eagleOrbit 20s linear infinite;
-            z-index: -1;
-        }
-        #intro{
-            text-align: justify;
-            position: relative;
-            top: -50px;
-            margin: 0% 5% 0% 5%;
-        }
+        /*__________________Moon and Eagle__________________*/
+            #moonLanding{
+                position: relative;
+                display: block;
+                margin: 0 auto;
+                height: 70%; min-height: 70%; top: 15%;
+                z-index: 1;
+            }
+                #moon{
+                    height: 100%;
+                    display: block;
+                    margin: 0 auto;
+                    z-index: 1;
+                }
+                #eagle{
+                    position: relative;
+                    display: block; margin: 0 auto;
+                    height: 13%;
+                    max-height: 13%; top: -56.5%;
+                    animation: eagleOrbit 20s linear infinite;
+                    z-index: 1;
+                }
+        /*__________________Earth and Station__________________*/
+            #earth{
+                position: absolute;
+                top: 35%;
+                left: 10%;
+                width: 10%;
+                height: 100%;
+                animation: earthHover 10s infinite;
+                z-index: 20;
+            }
+            @keyframes earthHover {
+                0% {top: 33%}
+                50% {top: 37%}
+                100% {top: 33%}
+            }
+            #iss{
+                position: absolute;
+                top: 35%;
+                left: 13%;
+                width: 4%;
+                height: 100%;
+                z-index: 30;
+                animation:  issOrbit 12s linear infinite, earthHover 10s infinite;
+            }
+            @keyframes issOrbit {
+                from { 	transform: rotate(0deg) translateX(-200%); }
+                to   {  transform: rotate(360deg) translateX(-200%); }
+            }
+
+#intro{
+    position: relative;
+    height: 20%;
+    background-color: yellow;
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0% 5% 0% 5%;
+    }
+
 #registration{
     position: relative;
     height: 100%;
-    width: 40%;
+    width: 35%;
 }
+    #registrationContent{
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+    }
+        #regText{
+            height: 30%;
+            display: table;
+        }
+            #regTextContent{
+                display: table-cell;
+                vertical-align: middle;
+            }
+        #regForm{
+            height: 50%; width: 100%;
+            display: table;
+            vertical-align: middle;
+        }
+            #regData {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .wideInput{
+                display: block; width: 100%; height: 100%;
+            }
+            .regSpacing{
+                width: 100%;
+                height: 18%;
+            }
+            #name1{
+                height: 100%; float: left; width: 49.25%;
+            }
+            #name2{
+                height: 100%; float: right; width: 49.25%;
+            }
+            #regButton{
+                display: block; height: 100%; width: 40%; margin: 0 auto;
+            }
 
-/*________________Design elements_________________*/
-#earthAndStation{
-    position: absolute;
-    top: 68%;
-    right: 1175px;
-    height: 80px;
-    width: 80px;
-    animation: earthHover 8s infinite;
-}
-#earth{
-    display: block;
-    height: 80px;
-    z-index: -10;
-}
-@keyframes earthHover {
-    0% {top: 65%}
-    50% {top: 70%}
-    100% {top: 65%}
-}
-#iss{
-    position: relative;
-    display: block;
-    margin: 0 auto;
-    height: 24px;
-    top: -52px;
-    animation: issOrbit 16s linear reverse infinite;
-    z-index: -9;
-}
-#hubble{
-    position: relative;
-    display: block;
-    margin: auto;
-    height: 24px;
-    top: -76px;
-    animation: hubbleOrbit 13s linear infinite;
-    z-index: -8;
-}
+
 
 #marsAndRover{
     position: absolute;
@@ -203,6 +264,73 @@ input{
 @keyframes roverOrbit {
     from { 	transform: rotate(0deg) translateY(39px) scaleY(-1); }
     to   {  transform: rotate(360deg) translateY(39px) scaleY(-1); }
+}
+#jupiter{
+    position: absolute;
+    height: 95px; width: 95px;
+    right: 1150px;
+    animation: jupiterHover 12s infinite;
+    z-index: -20;
+}
+@keyframes jupiterHover {
+    0% {top: 18%}
+    50% {top: 22%}
+    100% {top: 18%}
+}
+#voyager{
+    position: absolute;
+    height: 25px; width: 25px;
+    top: 25%;
+    overflow: hidden;
+    animation: voyagerFlight 30s linear  infinite;
+    z-index: -10;
+}
+@keyframes voyagerFlight {
+    from { 	transform: translateX(-1900px); }
+    to   {  transform: translateX(1900px); }
+}
+#saturn{
+    position: absolute;
+    width: 110px;
+    top: 18%;
+    left: 670px;
+    z-index: -20;
+}
+#uranus{
+    position: absolute;
+    width: 70px;
+    top: 50%;
+    left: 710px;
+    z-index: -20;
+    animation: uranusHover 10s infinite;
+}
+@keyframes uranusHover {
+    0% {top: 47%}
+    50% {top: 53%}
+    100% {top: 47%}
+}
+#comet{
+    position: absolute;
+    height: 30px; width: 30px;
+    top: 510px;
+    overflow: hidden;
+    left: 1225px;
+    animation: comet 20s linear  infinite;
+    z-index: -10;
+}
+#blackHole{
+    position: absolute;
+    height: 90px; width: 90px; top: 480px; left: 1225px;
+    animation: blackHole 8s linear infinite;
+    z-index: -20;
+}
+@keyframes spin {
+    from { 	transform: rotate(0deg) }
+    to   {  transform: rotate(360deg);}
+}
+@keyframes comet {
+    from { 	transform: translateX(-5000px); }
+    to   {  transform: translateX(0px); }
 }
 
 
@@ -240,21 +368,10 @@ input{
 }
 
 @keyframes eagleOrbit {
-    from { 	transform: rotate(0deg) translateX(190px); }
-    to   {  transform: rotate(360deg) translateX(190px); }
+    from { 	transform: rotate(0deg) translateX(450%); }
+    to   {  transform: rotate(360deg) translateX(450%); }
 }
 @keyframes eagleOrbitMobile {
     from { 	transform: rotate(0deg) translateY(330%); }
     to   {  transform: rotate(360deg) translateY(330%); }
-}
-
-
-
-@keyframes issOrbit {
-    from { 	transform: rotate(0deg) translateY(-55px); }
-    to   {  transform: rotate(360deg) translateY(-55px); }
-}
-@keyframes hubbleOrbit {
-    from { 	transform: rotate(0deg) translateY(84px); }
-    to   {  transform: rotate(360deg) translateY(84px); }
 }
