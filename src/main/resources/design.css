@@ -103,7 +103,7 @@ textarea:focus, input:focus{
 /*_________________Main content on the page_________________*/
 #mainContainer{
     position: relative;
-    height: 100%;
+    height: 87.2%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -112,7 +112,7 @@ textarea:focus, input:focus{
 #mainContent{
     position: relative;
     width: 85%;
-    height: 87.2%;
+    height: 100%;
     display: flex;
     flex-flow: wrap;    /*adds a breakpoint if necessary*/
 }
@@ -132,13 +132,10 @@ textarea:focus, input:focus{
                 position: relative;
                 display: block;
                 margin: 0 auto;
-                height: 70%; min-height: 70%; top: 15%;
-                z-index: 1;
+                height: 100%; width: 40%;
             }
                 #moon{
-                    height: 100%;
-                    display: block;
-                    margin: 0 auto;
+                    width: 100%; height: 100%;
                     z-index: -1;
                 }
                 #eagle{
@@ -378,6 +375,9 @@ textarea:focus, input:focus{
             }
             #star10{
                 top: 42%; right: 38%; animation: starShine 7s infinite linear;
+            }
+            #star11{
+                left: 0; top: -23%; width: 2%; animation: starShine 6s infinite linear;
             }
 #intro{
     position: relative;
