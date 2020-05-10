@@ -121,8 +121,7 @@ textarea:focus, input:focus{
         height: 100%;
         width: 65%;
     }
-
-/*_________________________Design elements_________________________*/
+    /*_________________________Design elements_________________________*/
         #canvas{
             position: relative;
             height: 80%;
@@ -141,12 +140,16 @@ textarea:focus, input:focus{
                 #eagle{
                     position: relative;
                     display: block; margin: 0 auto;
-                    height: 13%;
+                    height: 100%; width: 14%;
                     max-height: 13%; top: -56.5%;
                     animation: eagleOrbit 20s linear infinite;
-                    z-index: -1;
+                    z-index: 1;
                 }
-        /*__________________Earth and Station__________________*/
+                @keyframes eagleOrbit {
+                    from { 	transform: rotate(0deg) translateX(420%); }
+                    to   {  transform: rotate(360deg) translateX(420%); }
+                }
+/*__________________Earth and Station__________________*/
             #earth{
                 position: absolute;
                 top: 35%;
@@ -379,84 +382,86 @@ textarea:focus, input:focus{
             #star11{
                 left: 0; top: -23%; width: 2%; animation: starShine 6s infinite linear;
             }
-#intro{
-    position: relative;
-    height: 20%;
-    text-align: justify;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0% 7% 0% 7%;
-    }
-/*_______________________REGISTRATION____________________*/
-#registration{
-    position: relative;
-    height: 100%;
-    width: 35%;
-}
-    #regText{
-        height: 32%;
+        #intro{
+        position: relative; font-size-adjust: inherit;
+        height: 20%;
+        text-align: justify;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0% 7% 0% 7%;
+        }
+    /*_______________________REGISTRATION____________________*/
+    #registration{
         position: relative;
+        height: 100%;
+        width: 35%;
     }
-        #helmet{
-            position: absolute;
-            width: 20%;
-            bottom: 5%;
-            right: 0;
-        }
-        #astronautData{
-            position: absolute;
-            display: block;
-            height: 15%;
-            top: 85%;
-            vertical-align: bottom;
-        }
-        #regSlogen{
-            position: absolute;
-            top: 25%;
-            height: 40%;
-        }
-    #regForm{
-        height: 50%; width: 100%;
-        display: table;
-        vertical-align: middle;
-    }
-        #regData {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
-        .wideInput{
-            display: block; width: 100%; height: 100%;
-        }
-        .regSpacing{
-            width: 100%;
-            height: 16%;
-        }
-        #name1{
-            height: 100%; float: left; width: 48.75%;
-        }
-        #name2{
-            height: 100%; float: right; width: 48.75%;
-        }
-        #regButton{
-            display: block; height: 100%; width: 100%; margin: 0 auto; color: white; background-color: #00b159;
-        }
-        #smallText{
+        #regText{
+            height: 32%;
             position: relative;
-            height: 18%;
+            font-size: 100%;
         }
-            #smallTextContent {
-                position: relative;
-                margin: 0 auto;
-                width: 75%;
-                height: 70%;
-                top: 15%;
-                text-align: justify;
-                font-size: x-small;
+            #helmet{
+                position: absolute;
+                width: 20%;
+                bottom: 5%;
+                right: 0;
+                z-index: -1;
             }
-
+            #astronautData{
+                position: absolute;
+                display: block;
+                height: 15%;
+                top: 85%;
+                vertical-align: bottom;
+            }
+            #regSlogen{
+                position: absolute;
+                top: 25%;
+                height: 40%;
+            }
+        #regForm{
+            height: 50%; width: 100%;
+            display: table;
+            vertical-align: middle;
+        }
+            #regData {
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+            .wideInput{
+                display: block; width: 100%; height: 100%;
+            }
+            .regSpacing{
+                width: 100%;
+                height: 16%;
+            }
+            #name1{
+                height: 100%; float: left; width: 48.75%;
+            }
+            #name2{
+                height: 100%; float: right; width: 48.75%;
+            }
+            #regButton{
+                display: block; height: 100%; width: 100%; margin: 0 auto; color: white; background-color: #00b159;
+            }
+            #smallText{
+                position: relative;
+                height: 18%;
+            }
+                #smallTextContent {
+                    position: relative;
+                    margin: 0 auto;
+                    width: 75%;
+                    height: 70%;
+                    top: 15%;
+                    text-align: justify;
+                    font-size: x-small;
+                }
+/*_________________The footer of the page_________________*/
 #bottom{
     position: relative;
     background-color: #097d4a;
@@ -467,31 +472,28 @@ textarea:focus, input:focus{
 
 
 @media only screen and (max-width: 700px) {
-    #introduction{
-        width: 100%;
+    #mainContainer{
+        height: 150%;
     }
-    #mainContent {
-        display: block;
-        margin: auto;
-    }
-    #introBadge{
-        min-height: 50%;
-        width: 100%;
-    }
-    #registration{
-        min-height: 50%;
-        width: 100%;
-    }
-    #eagle{
-        animation: eagleOrbitMobile 20s linear infinite;
-    }
-}
+        #mainContent {
+            width: 90%;
+        }
+        #introduction{
+            height: 40%; width: 100%;
+        }
+        #intro{
+            height: 30%;
+        }
+        #registration{
+            height: 60%;
+        }
 
-@keyframes eagleOrbit {
-    from { 	transform: rotate(0deg) translateX(450%); }
-    to   {  transform: rotate(360deg) translateX(450%); }
-}
-@keyframes eagleOrbitMobile {
-    from { 	transform: rotate(0deg) translateY(330%); }
-    to   {  transform: rotate(360deg) translateY(330%); }
+        #introBadge{
+            min-height: 50%;
+            width: 100%;
+        }
+        #registration{
+            min-height: 50%;
+            width: 100%;
+        }
 }
