@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>ŰrSajtNet - Lépj be, regisztrálj!</title>
-    <link rel="stylesheet" href="design.css">
+    <link rel="stylesheet" href="/css/design.css">
 </head>
 <body>
 <!--_______________________HEADER SECTION_______________________-->
@@ -11,16 +11,16 @@
     <div class="headContainer">
         <div id="logoSection">
             <a href="login.html" id="logoLink">
-                <img src="cheeses/slice.svg" height="50px" id="logo">
+                <img src="/cheeses/slice.svg" height="50px" id="logo">
             </a>
             <h1 id="pageTitle">
                 <a href="login.html" id="nameLink">Űrsajtnet</a>
             </h1>
         </div>
         <div id="login">
-            <form method="post" id="loginForm">
-                <input type="name" placeholder="Felhasználónév">
-                <input type="password" placeholder="Jelszó">
+            <form id="loginForm" method="post" data-th-action="@{/login}">
+                <input type="text" placeholder="Felhasználónév" name="username">
+                <input type="password" placeholder="Jelszó" name="password">
                 <input type="submit" id="button" value="Belépés">
             </form>
         </div>
@@ -32,33 +32,33 @@
                 <div id="introduction">
                     <div id="canvas">
                         <div id="moonLanding">
-                            <img src="spaceElements/cheeseMoon.svg" id="moon">
-                            <img src="spaceElements/lunar-lander.svg" id="eagle">
+                            <img src="/spaceElements/cheeseMoon.svg" id="moon">
+                            <img src="/spaceElements/lunar-lander.svg" id="eagle">
                         </div>
-                        <img src="spaceElements/earth.svg" id="earth">
-                        <img src="spaceElements/space-station.svg" id="iss">
-                        <img src="spaceElements/sputnik.svg" id="sputnik">
-                        <img src="spaceElements/mars.svg" id="mars">
-                        <img src="spaceElements/mars-rover.svg" id="curiosity">
-                        <img src="spaceElements/satellite.svg" id="exoMars">
-                        <img src="spaceElements/jupiter.svg" id="jupiter">
-                        <img src="spaceElements/voyager.svg" id="voyager">
-                        <img src="spaceElements/saturn.svg" id="saturn">
-                        <img src="spaceElements/satellite.svg" id="cassini">
-                        <img src="spaceElements/satellite(2).svg" id="juno">
-                        <img src="spaceElements/uranus.svg" id="uranus">
-                        <img src="spaceElements/voyager.svg" id="uranusMoon">
-                        <img src="spaceElements/galaxy.svg" id="galaxy">
-                        <img src="spaceElements/star.svg" class="star" id="star1">
-                        <img src="spaceElements/star.svg" class="star" id="star2">
-                        <img src="spaceElements/star.svg" class="star" id="star3">
-                        <img src="spaceElements/star.svg" class="star" id="star4">
-                        <img src="spaceElements/star.svg" class="star" id="star5">
-                        <img src="spaceElements/star.svg" class="star" id="star6">
-                        <img src="spaceElements/star.svg" class="star" id="star7">
-                        <img src="spaceElements/star.svg" class="star" id="star9">
-                        <img src="spaceElements/star.svg" class="star" id="star10">
-                        <img src="spaceElements/star.svg" class="star" id="star11">
+                        <img src="/spaceElements/earth.svg" id="earth">
+                        <img src="/spaceElements/space-station.svg" id="iss">
+                        <img src="/spaceElements/sputnik.svg" id="sputnik">
+                        <img src="/spaceElements/mars.svg" id="mars">
+                        <img src="/spaceElements/mars-rover.svg" id="curiosity">
+                        <img src="/spaceElements/satellite.svg" id="exoMars">
+                        <img src="/spaceElements/jupiter.svg" id="jupiter">
+                        <img src="/spaceElements/voyager.svg" id="voyager">
+                        <img src="/spaceElements/saturn.svg" id="saturn">
+                        <img src="/spaceElements/satellite.svg" id="cassini">
+                        <img src="/spaceElements/satellite(2).svg" id="juno">
+                        <img src="/spaceElements/uranus.svg" id="uranus">
+                        <img src="/spaceElements/voyager.svg" id="uranusMoon">
+                        <img src="/spaceElements/galaxy.svg" id="galaxy">
+                        <img src="/spaceElements/star.svg" class="star" id="star1">
+                        <img src="/spaceElements/star.svg" class="star" id="star2">
+                        <img src="/spaceElements/star.svg" class="star" id="star3">
+                        <img src="/spaceElements/star.svg" class="star" id="star4">
+                        <img src="/spaceElements/star.svg" class="star" id="star5">
+                        <img src="/spaceElements/star.svg" class="star" id="star6">
+                        <img src="/spaceElements/star.svg" class="star" id="star7">
+                        <img src="/spaceElements/star.svg" class="star" id="star9">
+                        <img src="/spaceElements/star.svg" class="star" id="star10">
+                        <img src="/spaceElements/star.svg" class="star" id="star11">
                     </div>
                     <div id="intro" >
                         <h2>Merülj el a Sajtban, fedezd fel az univerzumot!</h2>
@@ -70,7 +70,7 @@
                 <div id="regText">
                     <div id="regSlogen">
                         <h1>Regisztráció</h1>Nincs fiókod? Dokkolj a hálózathoz!</div>
-                    <img src="spaceElements/astronauthelmet.svg" id="helmet">
+                    <img src="/spaceElements/astronauthelmet.svg" id="helmet">
                     <p id="astronautData">Az Űrhajós adatai:</p>
                 </div>
                 <div id="regForm">
@@ -97,19 +97,19 @@
 <footer>
     <div id="footContainer">
         <div class="footElement">
-        <img src="icons/connection.svg" class="footIcon">
+        <img src="/icons/connection.svg" class="footIcon">
         </div>
         <div class="footElement">
-        <img src="icons/howItWorks.svg" class="footIcon">
+        <img src="/icons/howItWorks.svg" class="footIcon">
         </div>
         <div class="footElement">
-        <img src="icons/responsive.svg" class="footIcon">
+        <img src="/icons/responsive.svg" class="footIcon">
         </div>
         <div class="footElement">
-        <img src="icons/security.svg" class="footIcon">
+        <img src="/icons/security.svg" class="footIcon">
         </div>
         <div class="footElement">
-            <img src="icons/icons.svg" class="footIcon">
+            <img src="/icons/icons.svg" class="footIcon">
         </div>
     </div>
 </footer>
