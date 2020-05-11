@@ -74,13 +74,13 @@
                     <p id="astronautData">Az Űrhajós adatai:</p>
                 </div>
                 <div id="regForm">
-                    <form method="post" id="regData">
+                    <form method="post" id="regData" autocomplete="off">
                         <div id="narrowInput" class="regSpacing">
                             <input type="text" name="fname" placeholder="Vezetéknév" id="name1">
                             <input type="text" name="lname" placeholder="Keresztnév" id="name2">
                         </div>
-                        <div class="regSpacing"><input type="email" placeholder="Emailcím" class="wideInput"></div>
-                        <div class="regSpacing"><input type="password" placeholder="Jelszó" class="wideInput"></div>
+                        <div class="regSpacing"><input name="email" type="email" placeholder="Emailcím" class="wideInput" autocomplete="false"></div>
+                        <div class="regSpacing"><input type="password" placeholder="Jelszó" class="wideInput" autocomplete="new-password"></div>
                         <div class="regSpacing"><input type="password" placeholder="Jelszó ismét" class="wideInput"></div>
                         <div class="regSpacing"><input type="submit" value="Regisztrálás" id="regButton"></div>
                     </form>

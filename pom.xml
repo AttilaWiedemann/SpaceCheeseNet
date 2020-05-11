@@ -15,7 +15,7 @@
         <relativePath/>
         <!-- lookup parent from repository -->
     </parent>
-
+<!--________________DEPENDENCIES________________-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -35,4 +35,40 @@
             <artifactId>spring-boot-starter-security</artifactId>
         </dependency>
     </dependencies>
+<!--________________PLUGINS________________-->
+    <build>
+        <plugins>
+
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <fork>true</fork>
+                    <mainClass>backend.Application</mainClass>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>repackage</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <encoding>UTF-8</encoding>
+                    <compilerArguments>
+                        <processor>org.hibernate.jpamodelgen.JPAMetaModelEntityProcessor</processor>
+                    </compilerArguments>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
 </project>
