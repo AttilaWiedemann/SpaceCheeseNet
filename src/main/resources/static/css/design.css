@@ -33,6 +33,7 @@ input:-webkit-autofill:active {
 header{
     position: relative;
     height: 14vh;
+    min-height: 14%;
     width: 100%;
     background-color: #16031e;
     display: flex;
