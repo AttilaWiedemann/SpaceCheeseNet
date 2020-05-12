@@ -18,8 +18,8 @@
             </div>
         </div>
         <div id="login">
-            <form id="loginForm" method="post" data-th-action="@{/login}">
-                <input type="text" placeholder="Felhasználónév" name="username">
+            <form id="loginForm" method="post" data-th-action="@{/login}" spellcheck="false">
+                <input type="email" placeholder="E-mail cím" name="username">
                 <input type="password" placeholder="Jelszó" name="password">
                 <input type="submit" id="button" value="Belépés">
             </form>
@@ -74,7 +74,7 @@
                     <p id="astronautData">Az Űrhajós adatai:</p>
                 </div>
                 <div id="regForm">
-                    <form method="post" id="regData" autocomplete="off">
+                    <form method="post" id="regData" spellcheck="false">
                         <div id="narrowInput" class="regSpacing">
                             <input type="text" name="fname" placeholder="Vezetéknév" id="name1">
                             <input type="text" name="lname" placeholder="Keresztnév" id="name2">
