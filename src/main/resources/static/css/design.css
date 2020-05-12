@@ -32,8 +32,7 @@ input:-webkit-autofill:active {
 /*_________________The headBar of the page_________________*/
 header{
     position: relative;
-    height: 14vh;
-    min-height: 14%;
+    height: 14%;
     width: 100%;
     background-color: #16031e;
     display: flex;
@@ -41,7 +40,7 @@ header{
     align-items: center;
 }
 .headContainer {
-    height: 7vh;
+    height: 50%;
     display: flex;
     width: 85%;
 }
@@ -66,7 +65,7 @@ header{
     height: 100%;
     position: relative;
     margin-left: 5px;
-    font-size: 7vh; line-height: 7vh; font-weight: 600;
+    font-size: 3vw; line-height: 3vw; font-weight: 600;
 }
 #login{
     height: 100%;
