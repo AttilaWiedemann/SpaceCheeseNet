@@ -95,18 +95,6 @@ textarea:focus, input:focus{
     color: white;
     width: 18%;
 }
-@media only screen and (max-width: 700px) {
-    #pageTitle{
-        display: none;
-    }
-    #logoSection{
-        width: fit-content;
-        margin-right: 2.5%;
-    }
-    #login{
-        width: 100%;
-    }
-}
 /*Headbar is fully reactive and finished!*/
 
 
@@ -516,6 +504,19 @@ footer{
     body{
         min-width: fit-content; min-height: fit-content;
     }
+    header{
+        height: 25vw;
+    }
+        #pageTitle{
+            display: none;
+        }
+        #logoSection{
+            width: fit-content;
+            margin-right: 2.5%;
+        }
+        #login{
+            width: 100%;
+        }
     #mainContainer{
         height: fit-content;
     }
@@ -526,15 +527,15 @@ footer{
             height: 100vw; width: 100vw;
         }
         #canvas{
-            height: 70%;
+            height: 60%;
         }
         #intro{
-            height: 30%;
+            height: 40%;
             font-size: 4vw;
             margin: 0 0 0 0 ;
         }
         #registration{
-            height: 120vw;
+            height: 140vw;
             width: 100%;
         }
 
@@ -545,5 +546,8 @@ footer{
         #registration{
             min-height: 50%;
             width: 100%;
+        }
+        #regText{
+            font-size: 4vw;
         }
 }
