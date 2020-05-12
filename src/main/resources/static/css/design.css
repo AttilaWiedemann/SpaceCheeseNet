@@ -15,8 +15,8 @@ body{
     background-color: #09051e;
     color: #fff4fc;
     position: absolute;
-    height: 100%;
-    width: 100%;
+    height: 100%; min-height: 600px;
+    width: 100%; min-width: 960px;
     overflow-x: hidden;
     padding: 0;
 }
@@ -65,7 +65,7 @@ header{
     height: 100%;
     position: relative;
     margin-left: 5px;
-    font-size: 3vw; line-height: 3vw; font-weight: 600;
+    font-size: 250%; line-height: 100%; font-weight: 600;
 }
 #login{
     height: 100%;
@@ -155,9 +155,20 @@ textarea:focus, input:focus{
                     animation: eagleOrbit 20s linear infinite;
                     z-index: -1;
                 }
+                #apollo{
+                    position: absolute;
+                    left: 42.5%;
+                    height: 100%; width: 15%;
+                    animation: apolloOrbit 20s linear infinite;
+                    z-index: -1;
+                }
                 @keyframes eagleOrbit {
                     from { 	transform: rotate(0deg) translateX(420%); }
                     to   {  transform: rotate(360deg) translateX(420%); }
+                }
+                @keyframes apolloOrbit {
+                    from { 	transform: rotate(0deg) translateX(-390%); }
+                    to   {  transform: rotate(360deg) translateX(-390%); }
                 }
 /*__________________Earth and Station__________________*/
             #earth{
@@ -427,12 +438,16 @@ textarea:focus, input:focus{
                 vertical-align: bottom;
             }
             #regSlogen{
+                font-size: 100%;
                 position: absolute;
                 top: 25%;
                 height: 40%;
             }
+            #regSlogen h1{
+                font-size: 220%;
+            }
         #regForm{
-            height: 50%; width: 100%;
+            height: 53%; width: 100%;
             display: table;
             vertical-align: middle;
         }
@@ -460,7 +475,7 @@ textarea:focus, input:focus{
             }
             #smallText{
                 position: relative;
-                height: 18%;
+                height: 15%;
             }
                 #smallTextContent {
                     position: relative;
@@ -474,7 +489,7 @@ textarea:focus, input:focus{
 /*_________________The footer of the page_________________*/
 footer{
     position: relative;
-    background-color: #076a53;
+    background-color: #009d5a;
     width: 100%;
     height: 14%;
     display: flex;
@@ -497,25 +512,30 @@ footer{
 
 
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 640px) {
+    body{
+        min-width: fit-content; min-height: fit-content;
+    }
     #mainContainer{
-        height: 160vw;
+        height: fit-content;
     }
         #mainContent {
             width: 90%;
         }
         #introduction{
-            height: 80vw; width: 100vw;
+            height: 100vw; width: 100vw;
         }
         #canvas{
             height: 70%;
         }
         #intro{
             height: 30%;
+            font-size: 4vw;
+            margin: 0 0 0 0 ;
         }
         #registration{
-            height: 80vw;
-            margin: 0% 7% 0% 7%;
+            height: 120vw;
+            width: 100%;
         }
 
         #introBadge{
