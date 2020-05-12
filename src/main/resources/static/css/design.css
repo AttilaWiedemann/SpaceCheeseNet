@@ -507,6 +507,9 @@ footer{
     header{
         height: 25vw;
     }
+        .headContainer{
+            width: 95%;
+        }
         #pageTitle{
             display: none;
         }
@@ -535,19 +538,16 @@ footer{
             margin: 0 0 0 0 ;
         }
         #registration{
-            height: 140vw;
-            width: 100%;
-        }
-
-        #introBadge{
-            min-height: 50%;
-            width: 100%;
-        }
-        #registration{
-            min-height: 50%;
+            height: 120vw;
             width: 100%;
         }
         #regText{
             font-size: 4vw;
         }
+        #regSlogen{
+            top: 15%;
+        }
+    footer{
+        height: 25vw;
+    }
 }
