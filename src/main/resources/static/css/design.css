@@ -461,11 +461,11 @@ textarea:focus, input:focus{
             #regButton{
                 display: block; height: 100%; width: 100%; margin: 0 auto; color: white; background-color: #00b159;
             }
-            #smallText{
+        #smallText{
                 position: relative;
                 height: 15%;
             }
-                #smallTextContent {
+            #smallTextContent {
                     position: relative;
                     margin: 0 auto;
                     width: 75%;
@@ -500,7 +500,7 @@ footer{
 
 
 
-@media only screen and (max-width: 640px) {
+@media only screen and (max-width: 600px) {
     body{
         min-width: fit-content; min-height: fit-content;
     }
@@ -538,14 +538,18 @@ footer{
             margin: 0 0 0 0 ;
         }
         #registration{
-            height: 120vw;
+            height: 150vw;
             width: 100%;
         }
         #regText{
             font-size: 4vw;
+            height: 25%;
         }
         #regSlogen{
             top: 15%;
+        }
+        #regForm{
+            height: 60%;
         }
     footer{
         height: 25vw;
