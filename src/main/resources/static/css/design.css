@@ -25,7 +25,7 @@ body{
 /*_________________The headBar of the page_________________*/
 header{
     position: relative;
-    height: 80px;
+    height: 14vh;
     width: 100%;
     background-color: #16031e;
     display: flex;
@@ -33,49 +33,52 @@ header{
     align-items: center;
 }
 .headContainer {
-    height: 50px;
+    height: 7vh;
     display: flex;
-    justify-content: space-between;
     width: 85%;
 }
 #logoSection{
-    height: 50px;
+    height: 100%;
     display: flex;
     width: 60%;
 }
 #logoLink{
-    z-index: 9;
+    height: 100%;
+}
+#logo{
+    position: relative;
+    bottom: 20%;
+    height: 140%;
 }
 #nameLink{
     text-decoration: none;
     color: #ffffff;
 }
 #pageTitle{
+    height: 100%;
+    position: relative;
     margin-left: 5px;
-}
-h1{
-    font-size: 40px;
-    z-index: 9;
+    font-size: 7vh; line-height: 7vh; font-weight: 600;
 }
 #login{
-    height: 50px;
+    height: 100%;
     width: 40%;
     display: flex;
     justify-content: center;
 }
 #loginForm{
-    z-index: 9;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 input{
-    height: 26px;
+    height: 80%;
     border-radius: 5px;
     background-color: #403F4C;
     width: 38%;
     border: none;
+    color: white;
 }
 textarea:focus, input:focus{
     outline: none;
@@ -86,11 +89,11 @@ textarea:focus, input:focus{
     width: 18%;
 }
 @media only screen and (max-width: 700px) {
-    h1{
+    #pageTitle{
         display: none;
     }
     #logoSection{
-        width: 50px;
+        width: fit-content;
         margin-right: 2.5%;
     }
     #login{
@@ -103,7 +106,7 @@ textarea:focus, input:focus{
 /*_________________Main content on the page_________________*/
 #mainContainer{
     position: relative;
-    height: 87.2%;
+    height: 86%;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -464,9 +467,9 @@ textarea:focus, input:focus{
 /*_________________The footer of the page_________________*/
 footer{
     position: relative;
-    background-color: #097d4a;
+    background-color: #076a53;
     width: 100%;
-    height: 80px;
+    height: 14%;
     display: flex;
     justify-content: center;
     align-items: center;
