@@ -476,7 +476,7 @@ textarea:focus, input:focus{
                     text-align: justify;
                     font-size: x-small;
                 }
-/*_________________The footer of the page_________________*/
+/*_________________Secondary content of the page_________________*/
 #secondaryContent{
     position: relative;
     width: 100%;
@@ -492,18 +492,21 @@ textarea:focus, input:focus{
         width: 85%;
         z-index: 200;
     }
-        .footElement{
+        .secondaryElement{
             position: relative;
             width: 25%; height: 45%; top: 27.5%; bottom: 27.5%;
             display: flex;
         }
-        .footIcon{
-            height: 100%; width: 30%;
-        }
-        .iconText{
-            position: relative; top: 15%;
-            height: 60%; width: 70%; font-size: 2vh; margin: 0 7% 0 7%;
-        }
+            .secondaryIcon{
+                height: 100%; width: 30%;
+            }
+            .iconText{
+                position: relative; top: 15%;
+                height: 60%; width: 70%; font-size: 2vh; margin: 0 7% 0 7%;
+            }
+/*_________________Footer of the page_________________*/
+
+
 
 
 
@@ -565,7 +568,7 @@ textarea:focus, input:focus{
     #secondaryContainer{
         flex-direction: column; width: 90%;
     }
-    .footElement{
+    .secondaryElement{
         top: 0;
         width: 100%; height: 37.5vw;
     }
