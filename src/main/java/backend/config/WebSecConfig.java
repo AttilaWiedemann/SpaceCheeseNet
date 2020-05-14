@@ -45,7 +45,9 @@ public class WebSecConfig extends WebSecurityConfigurerAdapter {
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout", "GET"))
                 .and()
                 .authorizeRequests()
-                .antMatchers("/login", "/css/**", "/spaceElements/**", "/icons/**", "/cheeses/**").permitAll()
+                .antMatchers("/login", "/gdpr", "/contact",
+                        "/techDetails", "/css/**", "/spaceElements/**",
+                        "/icons/**", "/cheeses/**").permitAll()
                 .anyRequest().authenticated();
     }
 }
