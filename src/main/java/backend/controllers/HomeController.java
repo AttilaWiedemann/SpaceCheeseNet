@@ -1,6 +1,8 @@
 package backend.controllers;
 
+import backend.dto.userDto;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -9,7 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class HomeController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    String getHomePage(){
+    String getHomePage(Model model){
+        model.addAttribute(new userDto());
         return "login";
     }
 
@@ -26,5 +29,12 @@ public class HomeController {
     @RequestMapping(value = "/contact", method = RequestMethod.GET)
     public String getContact(){
         return "contact";
+    }
+
+    @RequestMapping(value = "/registration", method = RequestMethod.POST)
+    public String registerUser(){
+        //TODO user dto
+        //TODO userService
+        return "redirect:/gdpr";
     }
 }

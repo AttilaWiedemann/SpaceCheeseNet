@@ -47,7 +47,7 @@ public class WebSecConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/login", "/gdpr", "/contact",
                         "/techDetails", "/css/**", "/spaceElements/**",
-                        "/icons/**", "/cheeses/**").permitAll()
+                        "/icons/**", "/cheeses/**", "/registration").permitAll()
                 .anyRequest().authenticated();
     }
 }
