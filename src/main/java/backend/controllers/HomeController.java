@@ -1,6 +1,8 @@
 package backend.controllers;
 
 import backend.dto.userDto;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -32,9 +34,9 @@ public class HomeController {
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
-    public String registerUser(){
+    public ResponseEntity registerUser(){
         //TODO user dto
         //TODO userService
-        return "redirect:/gdpr";
+        return new ResponseEntity(HttpStatus.ACCEPTED);
     }
 }
