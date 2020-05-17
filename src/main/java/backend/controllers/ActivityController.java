@@ -21,6 +21,10 @@ public class ActivityController {
         if(name.equals("") || name.length()<2) {
             return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
         }
+        //Maximum allowed length is 35 characters (413)
+        if(name.length()>35){
+            return new ResponseEntity(HttpStatus.PAYLOAD_TOO_LARGE);
+        }
         //List has a max size of 50. answer if list is full (507)
         if(cards.size() == 50){
             return new ResponseEntity(HttpStatus.INSUFFICIENT_STORAGE);

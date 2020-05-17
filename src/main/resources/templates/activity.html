@@ -26,35 +26,21 @@
         <p id="űrsajtActivitysub">Induljon a játék! Oszd meg legelvetemültebb ötleteid, és sorsolj az Űrsajtnet adatbázisából</p>
     </div>
 </div>
-
-
-
-
-
-
-
-
 <div id="mainContent">
     <div id="inputContainer">
-        <form id="card" name="fm">
-            <input type="text" placeholder="ide írj!" name="activityName" id="idea" autocomplete="off">
+        <form id="card" name="fm" spellcheck="false">
+            <input type="text" placeholder="Activity ötlet helye (maximum 35 karakter)"
+                   name="activityName" id="idea" autocomplete="off" >
             <button type="button" id="submitActivity" onclick="submitCard()">Elküld</button>
         </form>
     </div>
     <div id="contentHolder">
         <div data-th-text="${message}" id="content"></div>
     </div>
-    <button type="button" onclick="getContent()">Sorsolás</button>
+    <div id="bottomContent">
+        <button type="button" id="getCard" onclick="getContent()">Sorsolás</button>
+    </div>
 </div>
-
-
-
-
-
-
-
-
-
 
 
 <script>
@@ -64,11 +50,14 @@
             type : "POST",
             data : $("#card").serialize(),
             statusCode: {
-                200: function(responseObject, textStatus, jqXHR) {
+                200: function() {
                     alert("Hozzáadva az adatbázishoz");
                 },
-                406: function(responseObject, textStatus, errorThrown) {
+                406: function() {
                     alert("Túl rövid :,(");
+                },
+                413: function () {
+                    alert("Túl hosszú :O");
                 },
                 503: function(){
                     alert("Ez a szó már szerepel az adatbázisban")
