@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Activity</title>
+    <link rel="stylesheet" href="/static/css/activityDesign.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+<header>
+    <div class="headContainer">
+        <div id="logoSection">
+            <a href="login.html" id="logoLink">
+                <img src="/cheeses/slice.svg" height="50px" id="logo">
+            </a>
+            <div id="pageTitle">
+                <a href="login.html" id="nameLink">Űrsajtnet</a>
+            </div>
+        </div>
+    </div>
+</header>
+<div>
+    <div>
+        <form id="card" name="fm">
+            <input type="text" placeholder="ide írj!" name="activityName">
+            <button type="button" id="submitActivity" onclick="submitCard()">Elküld</button>
+        </form>
+    </div>
+</div>
+<div>
+    <div data-th-text="${message}" id="content"></div>
+    <button type="button" onclick="getContent()">Sorsolás</button>
+</div>
+
+
+<script>
+    function submitCard(){
+        $.ajax({
+            url: '/activityget',
+            type : "POST",
+            data : $("#card").serialize()
+        });
+        document.fm.reset();
+        alert("Hozzáadva az adatbázishoz");
+        }
+    function getContent() {
+        $("#content").load("/getCard");
+    }
+</script>
+</body>
+</html>

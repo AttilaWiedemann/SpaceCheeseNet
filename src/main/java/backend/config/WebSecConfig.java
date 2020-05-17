@@ -35,6 +35,8 @@ public class WebSecConfig extends WebSecurityConfigurerAdapter {
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http
+                .csrf().disable()
+                .cors().and()
                 .formLogin()
                 .loginPage("/login").permitAll()
                 .loginProcessingUrl("/login")
@@ -47,7 +49,8 @@ public class WebSecConfig extends WebSecurityConfigurerAdapter {
                 .authorizeRequests()
                 .antMatchers("/login", "/gdpr", "/contact",
                         "/techDetails", "/css/**", "/spaceElements/**",
-                        "/icons/**", "/cheeses/**", "/registration").permitAll()
+                        "/icons/**", "/cheeses/**", "/activity",
+                        "/activityget", "/registration", "/getCard").permitAll()
                 .anyRequest().authenticated();
     }
 }
