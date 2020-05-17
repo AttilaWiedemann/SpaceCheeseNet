@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Activity</title>
-    <link rel="stylesheet" href="/static/css/activityDesign.css">
+    <link rel="stylesheet" href="/css/activityDesign.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
+
 <header>
     <div class="headContainer">
         <div id="logoSection">
@@ -19,18 +20,41 @@
         </div>
     </div>
 </header>
-<div>
-    <div>
+<div id="mainLogo">
+    <div id="mainText">
+        <h1 id="űrsajtActivity">Űrsajt Activity</h1>
+        <p id="űrsajtActivitysub">Induljon a játék! Oszd meg legelvetemültebb ötleteid, és sorsolj az Űrsajtnet adatbázisából</p>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+<div id="mainContent">
+    <div id="inputContainer">
         <form id="card" name="fm">
-            <input type="text" placeholder="ide írj!" name="activityName">
+            <input type="text" placeholder="ide írj!" name="activityName" id="idea" autocomplete="off">
             <button type="button" id="submitActivity" onclick="submitCard()">Elküld</button>
         </form>
     </div>
-</div>
-<div>
-    <div data-th-text="${message}" id="content"></div>
+    <div id="contentHolder">
+        <div data-th-text="${message}" id="content"></div>
+    </div>
     <button type="button" onclick="getContent()">Sorsolás</button>
 </div>
+
+
+
+
+
+
+
+
+
 
 
 <script>
@@ -38,10 +62,21 @@
         $.ajax({
             url: '/activityget',
             type : "POST",
-            data : $("#card").serialize()
+            data : $("#card").serialize(),
+            statusCode: {
+                200: function(responseObject, textStatus, jqXHR) {
+                    alert("Hozzáadva az adatbázishoz");
+                },
+                406: function(responseObject, textStatus, errorThrown) {
+                    alert("Túl rövid :,(");
+                },
+                503: function(){
+                    alert("Ez a szó már szerepel az adatbázisban")
+                }
+            }
         });
         document.fm.reset();
-        alert("Hozzáadva az adatbázishoz");
+
         }
     function getContent() {
         $("#content").load("/getCard");

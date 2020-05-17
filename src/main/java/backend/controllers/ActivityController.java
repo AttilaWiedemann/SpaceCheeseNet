@@ -17,8 +17,19 @@ public class ActivityController {
 
     @RequestMapping(value = "/activityget", method = RequestMethod.POST)
     public ResponseEntity getActivityget(@RequestParam(name="activityName") String name){
+        //Unacceptable inputs (406)
+        if(name.equals("") || name.length()<2) {
+            return new ResponseEntity(HttpStatus.NOT_ACCEPTABLE);
+        }
+        //List has a max size of 50. answer if list is full (507)
+        if(cards.size() == 50){
+            return new ResponseEntity(HttpStatus.INSUFFICIENT_STORAGE);
+        }
+        //List already contains input (503)
+        if(cards.contains(name)){
+            return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
+        }
         cards.add(name);
-        System.out.println(name + " added");
         return new ResponseEntity(HttpStatus.OK);
     }
 
