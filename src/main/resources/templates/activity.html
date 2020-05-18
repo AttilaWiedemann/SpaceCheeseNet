@@ -35,12 +35,17 @@
         </form>
     </div>
     <div id="contentHolder">
-        <div data-th-text="${message}" id="content"></div>
+        <div id="content"></div>
     </div>
     <div id="bottomContent">
         <button type="button" id="getCard" onclick="getContent()">Sorsolás</button>
     </div>
+    <div id="comment">
+        <img src="/activityElements/robot.svg" id="robot">
+        <div id="commentHolder"></div>
+    </div>
 </div>
+
 
 
 <script>
@@ -69,6 +74,7 @@
         }
     function getContent() {
         $("#content").load("/getCard");
+        $("#commentHolder").load("/getComment");
     }
 </script>
 </body>

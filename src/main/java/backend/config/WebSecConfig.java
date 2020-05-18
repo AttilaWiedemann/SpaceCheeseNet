@@ -50,7 +50,8 @@ public class WebSecConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/login", "/gdpr", "/contact",
                         "/techDetails", "/css/**", "/spaceElements/**",
                         "/icons/**", "/cheeses/**", "/activity",
-                        "/activityget", "/registration", "/getCard").permitAll()
+                        "/activityget", "/registration", "/getCard", "/activityElements/**",
+                        "/getComment").permitAll()
                 .anyRequest().authenticated();
     }
 }

@@ -1,6 +1,7 @@
 package backend.controllers;
 
 import backend.model.cardDTO;
+import org.springframework.http.HttpRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
@@ -42,6 +43,12 @@ public class ActivityController {
         String given = cards.get(new Random().nextInt(cards.size()));
         model.addAttribute("message", given);
         return "getCard";
+    }
+
+    @RequestMapping(value = "getComment", method = RequestMethod.GET)
+    public String getListSize(Model model){
+        model.addAttribute("robotComment", "tesztsajt");
+        return "getComment";
     }
 
     @RequestMapping(value = "/activity", method = RequestMethod.GET)
