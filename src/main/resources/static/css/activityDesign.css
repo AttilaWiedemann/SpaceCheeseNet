@@ -91,7 +91,7 @@ header{
     font-size: 300%; font-weight: 600; top: -5%;
 }
 #űrsajtActivitysub{
-    font-size: 125%; display: block; position: relative; bottom: -20%;
+    font-size: 110%; display: block; position: relative; bottom: -20%;
 }
 #mainContent{
     position: relative;
@@ -144,10 +144,10 @@ header{
             font-size: 5vw; font-weight: bold;
         }
     #bottomContent{
-        height: 36%; display: flex;justify-content: center;
+        height: 36%; display: flex; flex-direction: column;
     }
         #getCard{
-            display: block;
+            display: block; margin-left: auto; margin-right: auto;
             position: relative; border-radius: 5px;
             height: 40%; width: 28%; top: 10%; right: 0;
             background-color: #FB942D;
@@ -156,17 +156,22 @@ header{
             font-family: "Trebuchet MS", "Comic Sans MS", serif;
             font-weight: bold;
         }
+        #warning{
+            display: block; margin-left: auto; margin-right: auto;
+            position: relative; top: 20%; font-size: 1vw;
+        }
 
 #comment{
-    position: absolute; bottom: 0; width: 20%; height: 30%; left: 7%;
-    display: flex;
+    position: absolute; bottom: 0; width: 18%; height: 23%; left: 7%;
+    display: flex; justify-content: space-between;
 }
     #robot{
         position: relative;
-        height: 80%; top: 20%;
+        height: 100%;
     }
     #commentHolder{
-        height: 100%; width: 100%;
+        position: relative; right: 0;
+        height: 50%; width: 60%; top: 30%;
     }
 
 

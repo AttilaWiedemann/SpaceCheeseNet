@@ -22,8 +22,8 @@
 </header>
 <div id="mainLogo">
     <div id="mainText">
-        <h1 id="űrsajtActivity">Űrsajt Activity</h1>
-        <p id="űrsajtActivitysub">Induljon a játék! Oszd meg legelvetemültebb ötleteid, és sorsolj az Űrsajtnet adatbázisából</p>
+        <h1 id="űrsajtActivity">Űrsajt activity generátor</h1>
+        <p id="űrsajtActivitysub">Induljon a játék! Oszd meg legelvetemültebb ötleteid, és sorsolj az Űrsajt hálózatáról</p>
     </div>
 </div>
 <div id="mainContent">
@@ -39,6 +39,7 @@
     </div>
     <div id="bottomContent">
         <button type="button" id="getCard" onclick="getContent()">Sorsolás</button>
+        <div id="warning">*Kisorsolás után az ötlet törlődik a listáról</div>
     </div>
     <div id="comment">
         <img src="/activityElements/robot.svg" id="robot">
@@ -73,9 +74,20 @@
 
         }
     function getContent() {
+        $.when($.ajax(firstContent())).then(function () {
+            secondContent();
+        });
+    }
+
+    function firstContent(){
         $("#content").load("/getCard");
+    }
+    function secondContent(){
         $("#commentHolder").load("/getComment");
     }
+
+    document.addEventListener('click', function(e){
+        if(document.activeElement.toString() == '[object HTMLButtonElement]'){ document.activeElement.blur(); } });
 </script>
 </body>
 </html>

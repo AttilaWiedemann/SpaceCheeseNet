@@ -40,14 +40,25 @@ public class ActivityController {
 
     @RequestMapping(value = "/getCard", method = RequestMethod.GET)
     public String isItCool(Model model){
-        String given = cards.get(new Random().nextInt(cards.size()));
-        model.addAttribute("message", given);
+        try {
+            String given = cards.get(new Random().nextInt(cards.size()));
+            model.addAttribute("message", given);
+            cards.remove(given);
+        } catch (IllegalArgumentException ignored){}
         return "getCard";
     }
 
     @RequestMapping(value = "getComment", method = RequestMethod.GET)
     public String getListSize(Model model){
-        model.addAttribute("robotComment", "tesztsajt");
+        String comment;
+        if(cards.size() >= 1) {
+            comment = "A listán ezen kívül "
+                    + cards.size() +
+                    " ötlet található";
+        }else {
+            comment = "A lista üres. Írj újabb ötleteket!";
+        }
+        model.addAttribute("robotComment", comment);
         return "getComment";
     }
 
