@@ -170,8 +170,8 @@ header{
         height: 100%;
     }
     #commentHolder{
-        position: relative; right: 0;
-        height: 50%; width: 60%; top: 30%;
+        position: relative; right: 10%;
+        height: 50%; width: 50%; top: 10%;
     }
 
 #canvas{
@@ -181,7 +181,7 @@ header{
         position: absolute;
     }
     #sun{
-        top: 24%; left: 14%; width: 9%; animation: sunShine infinite 8s;
+        top: 22%; left: 14%; width: 9%; animation: sunShine infinite 8s;
     }
     @keyframes sunShine {
         0% {opacity: 100%}
@@ -189,35 +189,59 @@ header{
         100% {opacity: 100%}
     }
     #mercury{
-        top: 42%; left: 7%; width: 3.5%;
+        top: 42%; left: 7%; width: 2%;
     }
-    #earth{
+    #venus{
         top: 19%; left: 27%; width: 5%;
     }
-    #mars{
-        top: 20%; left: 7%; width: 4%;
+    #satellite2{
+        top: 20%; left: 7%; width: 2.5%; animation: marsHover infinite 6s;
+    }
+    @keyframes marsHover {
+        0% { top: 19% }
+        50% {top:21% }
+        100% {top: 19% }
     }
     #sputnik{
         top: 60%; left: 10%; width: 3%;
     }
-    @keyframes cometFall {
-        0% { top: 49% }
-        50% {top: 50% }
-        100% {top: 49% }
+    #mars{
+        bottom: 17%; left: 16%; width: 5%;
+    }
+    #moon{
+        bottom: 20%; left: 8%; width: 2%; animation: moonHover 5s infinite reverse;
+    }
+@keyframes moonHover {
+    0% { bottom: 19% }
+    50% { bottom: 21% }
+    100% { bottom: 19% }
+}
+    @keyframes satHover {
+        0% { top: 45% }
+        50% {top: 46% }
+        100% {top: 45% }
     }
     #comet{
         width: 2%; top: 20%; right: 15%;
     }
-    #comet2{
-        width: 2%; top: 50%; left: 20%;
-        outline: 3px solid transparent; animation: cometFall infinite 2s linear, sunShine infinite linear 4s;
+    #earth{
+        width: 4.5%; top: 48%; left: 16.5%;
+        outline: 3px solid transparent; animation: satHover infinite 4s;
     }
     #jupiter{
-        top: 22%; right: 20%; width: 7%;
+        top: 22%; right: 22%; width: 6.5%;
     }
     #saturn{
-        top: 28%; right: 7%; width: 6%; transform: scaleX(-1);
+        bottom: 4%; right: 25%; width: 8%; transform: scaleX(-1);
     }
     #satellite{
-        bottom: 7%; left: 25%; width: 7%;
+        bottom: 4%; left: 25%; width: 7%; animation: sat1Hover infinite 10s;
+    }
+    @keyframes sat1Hover {
+        0% { left: 24.5% }
+        50% {left: 26% }
+        100% {left: 24.5% }
+    }
+    #satellite3{
+        top: 43%; right: 18%; width: 5%; transform: scaleX(-1) scaleY(-1);
     }
