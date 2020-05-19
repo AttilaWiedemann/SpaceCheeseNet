@@ -35,6 +35,7 @@ public class ActivityController {
             return new ResponseEntity(HttpStatus.SERVICE_UNAVAILABLE);
         }
         cards.add(name);
+        System.out.println(name + " added");
         return new ResponseEntity(HttpStatus.OK);
     }
 
