@@ -52,7 +52,7 @@ header{
 #logoSection{
     height: 100%;
     display: flex;
-    width: 60%;
+    width: 40%;
 }
 #logoLink{
     height: 100%;
@@ -76,7 +76,7 @@ header{
     width: 18%;
 }
 #activityGenerator{
-    width: 40%; text-align: right;
+    width: 60%; text-align: right;
     font-size: 250%; line-height: 100%; font-weight: 600;
 }
 /*_________________Main content of the page_________________*/
@@ -190,7 +190,7 @@ canvas {
         display: none;
     }
     #activityGenerator{
-        text-align: left; width: 82%;
+        text-align: left; width: 82%; font-size: 7vw;
     }
     #logoSection{
         width: 18%;
