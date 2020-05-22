@@ -190,9 +190,12 @@ canvas {
         display: none;
     }
     #activityGenerator{
-        text-align: left; width: 82%; font-size: 7vw;
+        text-align: left; width: 82%; font-size: 6vw;
     }
     #logoSection{
         width: 18%;
+    }
+    .headContainer{
+        width: 95%;
     }
 }
