@@ -198,6 +198,7 @@ canvas {
     #activityGenerator{
         width: 82%; font-size: 7vw;
         display: flex;
+        justify-content: center;
         align-items: center;
     }
     #logoSection{
@@ -208,5 +209,14 @@ canvas {
     }
     #commentHolder{
         font-size: 4vw;
+    }
+    #inputContainer{
+        height: 15%;
+    }
+    #bottomContent{
+        height: 15%;
+    }
+    #contentHolder{
+        min-height: 40%;
     }
 }
