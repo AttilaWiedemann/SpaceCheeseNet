@@ -177,6 +177,12 @@ canvas {
 }
 
 @media only screen and (max-width: 600px) {
+    header{
+        height: 25vw;
+    }
+    #mainContent{
+        height: 120vw;
+    }
     #getCard{
         width: 90%;
     }
@@ -190,12 +196,17 @@ canvas {
         display: none;
     }
     #activityGenerator{
-        text-align: left; width: 82%; font-size: 6vw;
+        width: 82%; font-size: 7vw;
+        display: flex;
+        align-items: center;
     }
     #logoSection{
         width: 18%;
     }
     .headContainer{
         width: 95%;
+    }
+    #commentHolder{
+        font-size: 4vw;
     }
 }
