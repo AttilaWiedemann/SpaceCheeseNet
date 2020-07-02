@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class HomeController {
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
-    String getHomePage(Model model){
-        model.addAttribute(new userDto());
+    String getHomePage(){
         return "login";
     }
 
@@ -37,6 +36,7 @@ public class HomeController {
     public ResponseEntity registerUser(){
         //TODO user dto
         //TODO userService
-        return new ResponseEntity(HttpStatus.ACCEPTED);
+    	System.out.println("megy ezz?");
+        return new ResponseEntity(HttpStatus.OK);
     }
 }

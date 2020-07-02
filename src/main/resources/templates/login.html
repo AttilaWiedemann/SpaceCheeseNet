@@ -4,6 +4,7 @@
     <meta charset="UTF-8" name="viewport" content="height=device-height, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <title>ŰrSajtNet - Lépj be, regisztrálj!</title>
     <link rel="stylesheet" href="/css/homeDesign.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 <body>
 <!--_______________________HEADER SECTION_______________________-->
@@ -75,21 +76,15 @@
                     <p id="astronautData">Az Űrhajós adatai:</p>
                 </div>
                 <div id="regForm">
-                    <form id="regData" spellcheck="false"
-                          data-th-action="@{/registration}" method="POST" data-th-object="${userDto}">
+                    <form id="regData" spellcheck="false">
                         <div id="narrowInput" class="regSpacing">
-                            <input type="text" name="fname" placeholder="Vezetéknév" id="name1"
-                                   data-th-field="*{firstName}">
-                            <input type="text" name="lname" placeholder="Keresztnév" id="name2"
-                                   data-th-field="*{secondName}">
+                            <input type="text" name="fname" placeholder="Vezetéknév" id="name1">
+                            <input type="text" name="lname" placeholder="Keresztnév" id="name2">
                         </div>
-                        <div class="regSpacing"><input name="email" type="email" placeholder="Emailcím" class="wideInput" autocomplete="false"
-                                                       data-th-field="*{emailAddress}"></div>
-                        <div class="regSpacing"><input type="password" placeholder="Jelszó" class="wideInput" autocomplete="new-password"
-                                                       data-th-field="*{passWord}"></div>
-                        <div class="regSpacing"><input type="password" placeholder="Jelszó ismét" class="wideInput"
-                                                       data-th-field="*{passWordAgain}"></div>
-                        <div class="regSpacing"><input type="submit" value="Regisztrálás" id="regButton"></div>
+                        <div class="regSpacing"><input name="email" type="email" placeholder="Emailcím" class="wideInput" autocomplete="false"></div>
+                        <div class="regSpacing"><input type="password" placeholder="Jelszó" class="wideInput" autocomplete="new-password"></div>
+                        <div class="regSpacing"><input type="password" placeholder="Jelszó ismét" class="wideInput"></div>
+                        <div class="regSpacing"><input type="button" value="Regisztrálás" id="regButton" onclick="registerUser()"></div>
                     </form>
                 </div>
                 <div id="smallText">
@@ -140,5 +135,21 @@
         from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a>
     </div>
 </footer>
+<script type="text/javascript">
+	function registerUser(){
+		$.ajax({
+			url: '/registration',
+			type: "POST",
+			data: $("regData").serialize(),
+			statusCode: {
+				200: function() {
+                    alert("Sikeres regisztráció!");
+                }
+			}
+		});
+		document.fm.reset();
+	}
+
+</script>
 </body>
 </html>
